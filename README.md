@@ -1,6 +1,8 @@
-# HTTP::Multiserver [![Build Status](https://travis-ci.org/vladfaust/http-multiserver.cr.svg?branch=master)](https://travis-ci.org/vladfaust/http-multiserver.cr) [![Docs](https://img.shields.io/badge/docs-available-brightgreen.svg)](https://vladfaust.com/http-multiserver.cr) [![GitHub release](https://img.shields.io/github/release/vladfaust/http-multiserver.cr.svg)](https://github.com/vladfaust/http-multiserver.cr/releases)
+<img src="https://user-images.githubusercontent.com/7955682/30344871-ab597c06-980b-11e7-9789-e282ccaeb339.png" height="150">
 
-Dispatches a request to another `HTTP::Server` depending on its path (a.k.a. Ruby's [Rack::URLMap](http://www.rubydoc.info/gems/rack/Rack/URLMap)).
+# [![Build Status](https://travis-ci.org/vladfaust/http-multiserver.cr.svg?branch=master)](https://travis-ci.org/vladfaust/http-multiserver.cr) [![Docs](https://img.shields.io/badge/docs-available-brightgreen.svg)](https://vladfaust.com/http-multiserver.cr) [![Dependencies](https://shards.rocks/badge/github/vladfaust/http-multiserver.cr/status.svg)](https://shards.rocks/github/vladfaust/http-multiserver.cr) [![GitHub release](https://img.shields.io/github/release/vladfaust/http-multiserver.cr.svg)](https://github.com/vladfaust/http-multiserver.cr/releases)
+
+[HTTP::Multiserver](https://github.com/vladfaust/http-multiserver.cr) dispatches a request to another vanilla `HTTP::Server` depending on its path (a.k.a. Ruby's [Rack::URLMap](http://www.rubydoc.info/gems/rack/Rack/URLMap)).
 
 ## Installation
 
@@ -94,3 +96,8 @@ As mentioned above, `HTTP::Multiserver` is just a regular `HTTP::Server` which d
 ## Contributors
 
 - [@vladfaust](https://github.com/vladfaust) Vlad Faust - creator, maintainer
+
+## Credits
+
+- Logo font: [HVD Comic Serif Pro](https://www.fontsquirrel.com/fonts/hvd-comic-serif-pro)
+- Logo image: [EmojiOne](https://www.emojione.com/)
