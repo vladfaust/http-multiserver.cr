@@ -73,9 +73,9 @@ This is how the request is dispatched under the hood (simplified):
 
 ```crystal
 internal_map = {
-  %r{/foo/} => foo_server,
-  %r{/bar}  => bar_server,
-  %r{/}     => fallback_server
+  %r{^/foo/} => foo_server,
+  %r{/bar}   => bar_server,
+  %r{^/}     => fallback_server
 }
 
 path = request.path.append_slash # "/foo/abc" turns into "foo/abc/"

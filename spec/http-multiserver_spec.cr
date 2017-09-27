@@ -40,6 +40,7 @@ describe HTTP::Multiserver do
            "/foobar"     => "fallback",
            "/bar"        => "bar",
            "/bar/"       => "bar",
+           "/bar/foo"    => "bar",
            "/barbaz"     => "bar",
            "/bar/baz"    => "bar",
            "/ba"         => "fallback",

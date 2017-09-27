@@ -21,7 +21,7 @@ module HTTP
 
     def initialize(@host : String, @port : Int32, mapping : Hash(String | Regex, Server), handlers = [] of Handler, @fallback_handler : Handler::Proc? = nil)
       mapping.each do |path, server|
-        @mapping[path.is_a?(Regex) ? path : Regex.new(path.append_slash)] = server.processor.handler
+        @mapping[path.is_a?(Regex) ? path : Regex.new("^" + path.append_slash)] = server.processor.handler
       end
 
       handler = Handler::Proc.new do |context|
