@@ -1,8 +1,11 @@
 # HTTP::Multiserver
 
-Crystal requests dispatcher.
+[![Built with Crystal](https://img.shields.io/badge/built%20with-crystal-000000.svg?style=flat-square)](https://crystal-lang.org/)
+[![Build status](https://img.shields.io/travis/vladfaust/http-multiserver.cr/master.svg?style=flat-square)](https://travis-ci.org/vladfaust/http-multiserver.cr)
+[![Docs](https://img.shields.io/badge/docs-available-brightgreen.svg?style=flat-square)](https://vladfaust.com/http-multiserver.cr)
+[![Releases](https://img.shields.io/github/release/vladfaust/http-multiserver.cr.svg?style=flat-square)](https://github.com/vladfaust/http-multiserver.cr/releases)
 
-[![Build Status](https://travis-ci.org/vladfaust/http-multiserver.cr.svg?branch=master)](https://travis-ci.org/vladfaust/http-multiserver.cr) [![Docs](https://img.shields.io/badge/docs-available-brightgreen.svg)](https://vladfaust.com/http-multiserver.cr) [![Dependencies](https://shards.rocks/badge/github/vladfaust/http-multiserver.cr/status.svg)](https://shards.rocks/github/vladfaust/http-multiserver.cr) [![GitHub release](https://img.shields.io/github/release/vladfaust/http-multiserver.cr.svg)](https://github.com/vladfaust/http-multiserver.cr/releases)
+Crystal requests dispatcher.
 
 ## About
 
@@ -16,8 +19,10 @@ Add this to your application's `shard.yml`:
 dependencies:
   http-multiserver:
     github: vladfaust/http-multiserver.cr
-    version: ~> 0.1.1
+    version: ~> 0.1.0 # See an actual version in releases
 ```
+
+This shard follows [Semantic Versioning 2.0.0](https://semver.org/), so see [releases](https://github.com/vladfaust/http-multiserver.cr/releases) and change the `version` accordingly.
 
 ## Usage
 
@@ -100,8 +105,3 @@ As mentioned above, `HTTP::Multiserver` is just a regular `HTTP::Server` which d
 ## Contributors
 
 - [@vladfaust](https://github.com/vladfaust) Vlad Faust - creator, maintainer
-
-## Credits
-
-- Logo font: [HVD Comic Serif Pro](https://www.fontsquirrel.com/fonts/hvd-comic-serif-pro)
-- Logo image: [EmojiOne](https://www.emojione.com/)
