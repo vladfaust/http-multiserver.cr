@@ -1,9 +1,9 @@
 name: http-multiserver
-version: 0.1.2
+version: 0.2.0
 
 authors:
   - Vlad Faust <mail@vladfaust.com>
 
-crystal: 0.24.2
+crystal: 0.26.0
 
 license: MIT

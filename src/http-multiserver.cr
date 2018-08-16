@@ -3,28 +3,26 @@ require "./http-multiserver/ext/**"
 
 module HTTP
   class Multiserver < HTTP::Server
-    DEFAULT_HOST = "127.0.0.1"
-
-    alias Mapping = Hash(Regex, Handler | Handler::Proc)
+    alias Mapping = Hash(Regex, Handler | Handler::HandlerProc)
 
     @mapping = Mapping.new
 
-    # Create a new Multiserver binded to `DEFAULT_HOST`
-    def initialize(port, mapping, handlers = [] of Handler)
-      initialize(DEFAULT_HOST, port, mapping, handlers)
+    # Create a new Multiserver
+    def initialize(mapping, handlers = [] of Handler)
+      initialize(mapping, handlers)
     end
 
-    # Create a new Multiserver binded to `DEFAULT_HOST` with a custom *fallback_handler* block
-    def initialize(port, mapping, handlers = [] of Handler, &@fallback_handler : Context ->)
-      initialize(DEFAULT_HOST, port, mapping, handlers, fallback_handler)
+    # Create a new Multiserver with a custom *fallback_handler* block
+    def initialize(mapping, handlers = [] of Handler, &@fallback_handler : Context ->)
+      initialize(mapping, handlers, fallback_handler)
     end
 
-    def initialize(@host : String, @port : Int32, mapping : Hash(String | Regex, Server), handlers = [] of Handler, @fallback_handler : Handler::Proc? = nil)
+    def initialize(mapping : Hash(String | Regex, Server), handlers = [] of Handler, @fallback_handler : Handler::HandlerProc? = nil)
       mapping.each do |path, server|
         @mapping[path.is_a?(Regex) ? path : Regex.new("^" + path.append_slash)] = server.processor.handler
       end
 
-      handler = Handler::Proc.new do |context|
+      handler = Handler::HandlerProc.new do |context|
         matching_handler = dispatch(context.request.path)
 
         if matching_handler
@@ -40,7 +38,7 @@ module HTTP
       @processor = Server::RequestProcessor.new(handlers.any? ? self.class.build_middleware(handlers, handler) : handler)
     end
 
-    # Close all underlying handlers and then self
+    # Close all underlying servers and then self
     def close
       @mapping.each_value &.close
       super

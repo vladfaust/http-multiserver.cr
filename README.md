@@ -11,7 +11,7 @@ Crystal requests dispatcher.
 
 ## About
 
-`HTTP::Multiserver` dispatches a server request to another vanilla `HTTP::Server` depending on its path (a.k.a. Ruby's [Rack::URLMap](http://www.rubydoc.info/gems/rack/Rack/URLMap)).
+`HTTP::Multiserver` dispatches a server request to another vanilla `HTTP::Server` depending on its path similar to Ruby's [Rack::URLMap](http://www.rubydoc.info/gems/rack/Rack/URLMap).
 
 ## Installation
 
@@ -21,7 +21,7 @@ Add this to your application's `shard.yml`:
 dependencies:
   http-multiserver:
     github: vladfaust/http-multiserver.cr
-    version: ~> 0.1.0 # See an actual version in releases
+    version: ~> 0.2.0
 ```
 
 This shard follows [Semantic Versioning 2.0.0](https://semver.org/), so see [releases](https://github.com/vladfaust/http-multiserver.cr/releases) and change the `version` accordingly.
@@ -33,28 +33,23 @@ This shard follows [Semantic Versioning 2.0.0](https://semver.org/), so see [rel
 ```crystal
 require "http-multiserver"
 
-port = 5000
-
-# Note that underlying servers' ports don't matter
-simple_server = HTTP::Server.new(0, [HTTP::LogHandler.new]) do |context|
-  context.response.printf("Hello from Simple Server!")
-  context.response.close
+simple_server = HTTP::Server.new([HTTP::LogHandler.new]) do |context|
+  context.response.print("Hello from Simple Server!")
 end
 
 # For example purposes
 resque = Resque::Server.new
 
-multiserver = HTTP::Multiserver.new(port, {
+multiserver = HTTP::Multiserver.new({
   "/resque" => resque,
   "/"       => simple_server,
 }, [HTTP::ErrorHandler.new(true)]) do |context|
   # This is an optional custom fallback handler; by default returns "404 Not Found"
-  context.response.status_code = 200
-  context.response.printf("Not found: #{context.request.path}")
-  context.response.close
+  context.response.status_code = 418
+  context.response.print("☕ #{context.request.path} not found")
 end
 
-puts "Multiserver is running on #{port}!"
+multiserver.bind_tcp(5000)
 multiserver.listen
 ```
 
