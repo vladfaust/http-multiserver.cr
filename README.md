@@ -7,7 +7,7 @@
 [![Awesome](https://github.com/vladfaust/awesome/blob/badge-flat-alternative/media/badge-flat-alternative.svg)](https://github.com/veelenga/awesome-crystal)
 [![vladfaust.com](https://img.shields.io/badge/style-.com-lightgrey.svg?longCache=true&style=flat-square&label=vladfaust&colorB=0a83d8)](https://vladfaust.com)
 
-Crystal requests dispatcher.
+The requests dispatcher shard for [Crystal](https://crystal-lang.org/).
 
 ## About
 
