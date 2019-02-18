@@ -11,7 +11,15 @@
 
 The requests dispatcher shard for [Crystal](https://crystal-lang.org/).
 
-[![Become a Patron](https://vladfaust.com/img/patreon-small.svg)](https://www.patreon.com/vladfaust)
+## Supporters
+
+Thanks to all my patrons, I can continue working on beautiful Open Source Software! 🙏
+
+[Alexander Maslov](https://seendex.ru), [Lauri Jutila](https://github.com/ljuti)
+
+*You can become a patron too in exchange of prioritized support and other perks*
+
+[![Become Patron](https://vladfaust.com/img/patreon-small.svg)](https://www.patreon.com/vladfaust)
 
 ## About
 
