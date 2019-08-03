@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.29.0">
+<meta name="generator" content="Crystal Docs 0.30.0">
 
 
 <link href="../css/style.css" rel="stylesheet" type="text/css">
@@ -111,19 +111,19 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28mapping%3AHash%28String%7CRegex%2CServer%29%2Chandlers%3D%5B%5DofHandler%2Cfallback_handler%3AHandler%3A%3AHandlerProc%3F%3Dnil%29-class-method" class="signature"><strong>.new</strong>(mapping : Hash(String | Regex, Server), handlers = <span class="o">[]</span> <span class="k">of</span> <span class="t">Handler</span>, fallback_handler : Handler::HandlerProc? = <span class="n">nil</span>)</a>
+        <a href="#new(mapping:Hash(String%7CRegex,Server),handlers=[]ofHandler,fallback_handler:Handler::HandlerProc?=nil)-class-method" class="signature"><strong>.new</strong>(mapping : Hash(String | Regex, Server), handlers = <span class="o">[]</span> <span class="k">of</span> <span class="t">Handler</span>, fallback_handler : Handler::HandlerProc? = <span class="n">nil</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new%28mapping%2Chandlers%3D%5B%5DofHandler%29-class-method" class="signature"><strong>.new</strong>(mapping, handlers = <span class="o">[]</span> <span class="k">of</span> <span class="t">Handler</span>)</a>
+        <a href="#new(mapping,handlers=[]ofHandler)-class-method" class="signature"><strong>.new</strong>(mapping, handlers = <span class="o">[]</span> <span class="k">of</span> <span class="t">Handler</span>)</a>
         
           <div class="summary"><p>Create a new Multiserver</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new%28mapping%2Chandlers%3D%5B%5DofHandler%2C%26fallback_handler%3AContext-%3E%29-class-method" class="signature"><strong>.new</strong>(mapping, handlers = <span class="o">[]</span> <span class="k">of</span> <span class="t">Handler</span>, &fallback_handler : Context -> )</a>
+        <a href="#new(mapping,handlers=[]ofHandler,&fallback_handler:Context-%3E)-class-method" class="signature"><strong>.new</strong>(mapping, handlers = <span class="o">[]</span> <span class="k">of</span> <span class="t">Handler</span>, &fallback_handler : Context -> )</a>
         
           <div class="summary"><p>Create a new Multiserver with a custom <em>fallback_handler</em> block</p></div>
         
@@ -158,7 +158,7 @@
   <h3>Instance methods inherited from class <code>HTTP::Server</code></h3>
   
   
-    <a href="../HTTP/Server.html#processor%3AHTTP%3A%3AServer%3A%3ARequestProcessor-instance-method" class="tooltip">
+    <a href="../HTTP/Server.html#processor:HTTP::Server::RequestProcessor-instance-method" class="tooltip">
       <span>processor : HTTP::Server::RequestProcessor</span>
     processor</a>
     
@@ -202,7 +202,7 @@
         
         def self.<strong>new</strong>(mapping : Hash(String | Regex, Server), handlers = <span class="o">[]</span> <span class="k">of</span> <span class="t">Handler</span>, fallback_handler : Handler::HandlerProc? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#new%28mapping%3AHash%28String%7CRegex%2CServer%29%2Chandlers%3D%5B%5DofHandler%2Cfallback_handler%3AHandler%3A%3AHandlerProc%3F%3Dnil%29-class-method">#</a>
+        <a class="method-permalink" href="#new(mapping:Hash(String%7CRegex,Server),handlers=[]ofHandler,fallback_handler:Handler::HandlerProc?=nil)-class-method">#</a>
       </div>
       
       <br/>
@@ -218,7 +218,7 @@
         
         def self.<strong>new</strong>(mapping, handlers = <span class="o">[]</span> <span class="k">of</span> <span class="t">Handler</span>)
 
-        <a class="method-permalink" href="#new%28mapping%2Chandlers%3D%5B%5DofHandler%29-class-method">#</a>
+        <a class="method-permalink" href="#new(mapping,handlers=[]ofHandler)-class-method">#</a>
       </div>
       
         <div class="doc"><p>Create a new Multiserver</p></div>
@@ -236,7 +236,7 @@
         
         def self.<strong>new</strong>(mapping, handlers = <span class="o">[]</span> <span class="k">of</span> <span class="t">Handler</span>, &fallback_handler : Context -> )
 
-        <a class="method-permalink" href="#new%28mapping%2Chandlers%3D%5B%5DofHandler%2C%26fallback_handler%3AContext-%3E%29-class-method">#</a>
+        <a class="method-permalink" href="#new(mapping,handlers=[]ofHandler,&fallback_handler:Context-%3E)-class-method">#</a>
       </div>
       
         <div class="doc"><p>Create a new Multiserver with a custom <em>fallback_handler</em> block</p></div>
